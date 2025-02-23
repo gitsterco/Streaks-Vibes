@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Habit Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Daily Habit Tracker</h1>
+            <button id="darkModeToggle" class="icon-button">
+                <span class="material-icons">dark_mode</span>
+            </button>
+        </header>
+
+        <div class="habits-container">
+            <div class="habits-header">
+                <h2>My Habits</h2>
+                <button id="addHabitBtn" class="primary-button">Add Habit</button>
+            </div>
+            <div id="habitsList" class="habits-list">
+                <!-- Habits will be dynamically inserted here -->
+            </div>
+        </div>
+
+        <!-- Add Habit Modal -->
+        <div id="habitModal" class="modal">
+            <div class="modal-content">
+                <h2>Add New Habit</h2>
+                <form id="habitForm">
+                    <div class="form-group">
+                        <label for="habitName">Habit Name</label>
+                        <input type="text" id="habitName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="habitType">Habit Type</label>
+                        <select id="habitType" required>
+                            <option value="checkbox">Checkbox</option>
+                            <option value="counter">Counter</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="goalContainer" style="display: none;">
+                        <label for="habitGoal">Daily Goal</label>
+                        <input type="number" id="habitGoal" min="1">
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" id="cancelHabit" class="secondary-button">Cancel</button>
+                        <button type="submit" class="primary-button">Save Habit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html> 
